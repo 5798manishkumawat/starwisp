@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Page1.css";
 import SearchSVG from "../../assets/sidebar/Search.svg";
 import Graph1SVG from "../../assets/page1/Graph1.jpg";
 import Graph2SVG from "../../assets/page1/Graph2.jpg";
 import Graph3SVG from "../../assets/page1/Graph3.jpg";
 import Graph4SVG from "../../assets/page1/Graph4.jpg";
+import ADDSVG from "../../assets/page2/Add.svg";
+
 function Page1() {
 	const Right_items = [
 		{
@@ -49,6 +51,79 @@ function Page1() {
 		},
 	];
 
+	const [noteText, setNoteText] = useState("");
+	const [noteTitle, setNoteTitle] = useState("");
+	const [notes, setNotes] = useState([]);
+	const [isSet, setIsSet] = useState(false);
+
+	const saveNote = () => {
+		let Notes = [...notes];
+		if (noteText.length > 0 && noteTitle.length > 0) {
+			Notes.unshift({
+				title: noteTitle,
+				note: noteText,
+			});
+		}
+
+		setNotes(Notes);
+		setIsSet(false);
+		setNoteTitle("");
+		setNoteText("");
+	};
+
+	useEffect(() => {
+		setNotes([
+			{
+				title: "Title",
+				note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			},
+			{
+				title: "Manish",
+				note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			},
+			{
+				title: "Title",
+				note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			},
+			{
+				title: "Title",
+				note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			},
+			{
+				title: "Manish",
+				note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			},
+			{
+				title: "Title",
+				note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			},
+			{
+				title: "Title",
+				note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			},
+			{
+				title: "Manish",
+				note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			},
+			{
+				title: "Title",
+				note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			},
+			{
+				title: "Title",
+				note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			},
+			{
+				title: "Manish",
+				note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			},
+			{
+				title: "Title",
+				note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			},
+		]);
+	}, []);
+
 	return (
 		<div className="page1">
 			<div className="search_bar">
@@ -80,6 +155,53 @@ function Page1() {
 					<div className="page1_left_container2">
 						<div className="A">
 							<h2>Notepad</h2>
+							{isSet ? (
+								<>
+									<div className="note_form">
+										<input
+											onChange={(e) => setNoteTitle(e.target.value)}
+											type="text"
+											placeholder="Title"
+										/>
+										<textarea
+											onChange={(e) => setNoteText(e.target.value)}
+											placeholder="Write Note..."
+										/>
+									</div>
+									<div className="note_form_btn">
+										<button
+											className="note_form_red"
+											onClick={() => setIsSet(false)}
+										>
+											Cancel
+										</button>
+										<button onClick={() => saveNote()}>Save</button>
+									</div>
+								</>
+							) : (
+								<>
+									{notes.slice(0, 9).map((note) => {
+										return (
+											<div className="notepad_items">
+												<p className="notepad_items_title">
+													{note.title.slice(0, 6)}
+													{note.title.length > 6 && ".."}
+												</p>
+												<p className="notepad_items_des">
+													{note.note.slice(0, 25)}
+													{note.note.length > 25 && "..."}
+												</p>
+											</div>
+										);
+									})}
+									<div
+										onClick={() => setIsSet(true)}
+										className="notepad_items_add"
+									>
+										<img src={ADDSVG} alt="" />
+									</div>
+								</>
+							)}
 						</div>
 						<div className="B">
 							<img src={Graph2SVG} alt="" />
@@ -113,7 +235,7 @@ function Page1() {
 					</div>
 					<div className="page1_body_right_body">
 						<div className="page1_body_right_container">
-							{Right_items.slice(0,6).map((item) => {
+							{Right_items.slice(0, 6).map((item) => {
 								return (
 									<div className="page1_body_right_items">
 										<div className="A"></div>
