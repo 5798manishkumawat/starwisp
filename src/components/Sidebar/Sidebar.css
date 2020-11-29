@@ -1,0 +1,41 @@
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	width: 315px;
+	height: 100vh;
+	left: 0px;
+	top: 0px;
+	background-color: #ff6c40;
+}
+
+.sidebar_options {
+	width: 315px;
+	height: 82px;
+	left: 0px;
+    background: #ffc480;
+    margin-top: 7px;
+}
+.sidebar_options> img {
+	position: absolute;
+	width: 35.02px;
+	height: 36px;
+    margin-left: 30.49px;
+    margin-top: 20px;
+}
+
+.sidebar_options > span {
+	position: absolute;
+	width: 85px;
+	height: 36px;
+	left: 96px;
+	margin-top: 20px;
+
+	font-family: SF Pro Display;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 36px;
+	/* identical to box height */
+
+	color: #ffffff;
+}
