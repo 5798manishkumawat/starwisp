@@ -17,6 +17,7 @@ function Page2() {
 			});
 		}
 		setPost(Post);
+		setMessage("");
 	};
 	useEffect(() => {
 		setPost([
@@ -49,7 +50,7 @@ function Page2() {
 					placeholder="Share something with your class.."
 				/>
 				<div className="post_container_body">
-					<p>Cancel</p>
+					<p onClick={()=>setMessage("")}>Cancel</p>
 					<div className="post_container_body_attach">
 						<img src={AttachmentSVG} alt="" />
 					</div>

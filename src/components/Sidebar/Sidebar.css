@@ -1,7 +1,7 @@
 .sidebar {
 	display: flex;
 	flex-direction: column;
-	width: 315px;
+	width: 300px;
 	height: 100vh;
 	left: 0px;
 	top: 0px;
@@ -9,7 +9,7 @@
 }
 
 .sidebar_options {
-	width: 315px;
+	width: 300px;
 	height: 82px;
 	left: 0px;
     margin-top: 7px;

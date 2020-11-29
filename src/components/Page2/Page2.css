@@ -42,7 +42,6 @@
 	font-weight: normal;
 	font-size: 1.2vw;
 	line-height: 20px;
-
 	color: #ef3e36;
 }
 
@@ -98,7 +97,7 @@
 	width: 10%;
 	height: 100%;
 	object-fit: fill;
-    border-radius: 5px;
+	border-radius: 5px;
 }
 
 .page2_posts > .B {
@@ -134,11 +133,11 @@
 	color: #868686;
 }
 
-.post_msg{
+.post_msg {
 	font-family: SF Pro Display;
 	font-style: normal;
 	font-weight: 100;
 	font-size: 0.8vw;
 	line-height: 20px;
-    color: #000000be;
+	color: #000000be;
 }
