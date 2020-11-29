@@ -12,8 +12,10 @@
 	width: 315px;
 	height: 82px;
 	left: 0px;
-    background: #ffc480;
     margin-top: 7px;
+}
+.sidebar_options:hover{
+	background: #ffc480;
 }
 .sidebar_options> img {
 	position: absolute;
